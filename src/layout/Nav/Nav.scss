@@ -1,0 +1,21 @@
+div#nav{
+  width: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span#listeNav{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  p{
+    font-size: 12px;
+    transform: rotateZ(-90deg);
+    width: max-content;
+    margin: 80px -40px;
+    position: fixed;
+    bottom: 40px;
+  }
+}

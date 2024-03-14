@@ -1,0 +1,16 @@
+@import "/src/styles/utils.scss";
+
+a#navIcone{
+  display: flex;
+  margin: auto;
+  width: 64px;
+  height: 64px;
+  background-color: $white;
+  border-radius: 6px;
+
+  img{
+    width: 32px;
+    margin: auto;
+    display: block;
+  }
+}
