@@ -1,0 +1,16 @@
+@import "/src/styles/utils.scss";
+
+div#lineChart{
+  background-color: #FF0000;
+  border-radius: 5px;
+  color: #FFFFFF;
+
+  .recharts-legend-item-text,
+  .recharts-text.recharts-cartesian-axis-tick-value > tspan,
+  .recharts-text.recharts-cartesian-axis-tick-value{
+    opacity: 0.5;
+    stroke: #fff;
+    color: #fff;
+    fill: #fff;
+  }
+}

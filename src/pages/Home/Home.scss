@@ -1,16 +1,28 @@
+@import "/src/styles/utils.scss";
+
 div#home {
   display: flex;
   flex-direction: column;
-  padding: 151px 100px 60px;
+  padding: 151px 50px 30px;
   flex: 1;
-  gap: 77px;
+  gap: 50px;
 
   span#top {
-    border: 1px solid green;
+    font-size: 48px;
+
+    span{
+      color: #FF0101;
+    }
+
+    p{
+      font-size: 18px;
+      margin-top: 41px;
+    }
   }
 
   span#bottom {
     display: flex;
+    height: 100%;
     gap: 30px;
 
     span#gauche {
@@ -21,20 +33,51 @@ div#home {
 
       span.ligne {
         display: flex;
-        flex-direction: row;
-        border: 1px solid yellow;
-        padding: 50px;
+        flex-direction: column;
         gap: 30px;
+        flex: 1;
+
+        &#un{
+          & > p {
+            font-size:15px;
+            margin: 0;
+            & > span{
+              color: $grey;
+              margin: 0 10px;
+
+              &:before{
+                content: (" ");
+                background-color: $red;
+                width: 8px;
+                height: 8px;
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 8px;
+                border-radius: 50%;
+              }
+
+              &:last-child{
+                float: right;
+
+                &:before{
+                  background-color: $black;
+                }
+              }
+            }
+          }
+        }
 
         &#deux {
+          flex-direction: row;
+
           span.graphe {
-            border: 1px solid black;
-            padding: 15px;
+            flex-direction: row;
             max-width: 30%;
             flex: auto;
             justify-content: center;
             align-items: center;
             display: flex;
+            height: 100%;
           }
         }
       }
@@ -42,17 +85,46 @@ div#home {
 
     span#droite {
       width: 23%;
+      justify-content: space-evenly;
       flex-direction: column;
       gap: 40px;
       display: flex;
 
       span.ligneInfos {
         border: 1px solid orange;
-        padding: 32px;
+        padding: 16px;
         justify-content: center;
         align-items: center;
         display: flex;
       }
     }
+  }
+
+  div.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #FF0101;
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+
+    &.mini{
+      width: 60px;
+      height: 60px;
+      border-width: 8px;
+    }
+  }
+
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
 }

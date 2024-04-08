@@ -1,0 +1,28 @@
+div#nutritionInfos{
+
+  display: flex;
+
+  span.icone{
+    padding: 21px;
+    border-radius: 6px;
+    width: 60px;
+    height: 60px;
+    margin-right: 24px;
+  }
+
+  span:last-child{
+    margin: auto 0;
+    p{
+      margin: 0;
+      font-size: 20px;
+      font-weight: bold;
+      color: #282D30;
+
+      &:last-child{
+        font-size: 14px;
+        font-weight: normal;
+        color: #74798C;
+      }
+    }
+  }
+}
