@@ -63,16 +63,13 @@ async function fetchData(userId, typeDonnee){
             break;
     }
 
-    await sleep(250);
-
     // return fetch(urlApi + userId  + endOfUrl)
+
+    await sleep(250);
     return fakeFetch(userId, typeDonnee)
         .then(retourPromesseFetch => {
             return retourPromesseFetch.json()
                 .then(retourPromesseJson => {
-                    if(retourPromesseJson.data)
-                        return retourPromesseJson.data;
-
                     return retourPromesseJson;
                 })
                 .catch(err => {
