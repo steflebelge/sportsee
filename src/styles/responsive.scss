@@ -1,0 +1,28 @@
+@media screen and (max-width: 1455px) {
+  div#home{
+    padding: 151px 30px 30px;
+
+    span#bottom{
+      gap: 10px;
+      span#droite{
+        width: 15%;
+
+        div#nutritionInfos span.icone{
+          margin-right: 4px;
+        }
+      }
+      span#gauche{
+        span.ligne#deux span.graphe{
+          max-width: 33%;
+
+          &.backGround{
+            width: 29%;
+          }
+          &[style]{
+            max-width: none;
+          }
+        }
+      }
+    }
+  }
+}

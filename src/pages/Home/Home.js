@@ -1,11 +1,11 @@
 import {useEffect, useState} from "react";
 import {fetchData} from "../../utils/apiCommunication";
-import "./Home.scss";
 import Nutrition from "../../components/Nutrition/Nutrition";
 import SimpleBarChart from "../../components/SimpleBarChart/SimpleBarChart";
 import SimpleLineChart from "../../components/SimpleLineChart/SimpleLineChart";
 import SimplePieChart from "../../components/SimplePieChart/SimplePieChart";
 import SimpleRadarChart from "../../components/SimpleRadarChart/SimpleRadarChart";
+import "./Home.scss";
 
 function Home() {
     const [userId, setUserId] = useState(12);
@@ -134,6 +134,6 @@ export default Home;
 
 
  // - survol diag rouge => background != couleur
-// - test responsive
-// - verif avancée Notion et mise en situation
+// - verif avancée Notion (++routes) et mise en situation
+// - preparation Soutenance
 
