@@ -30,6 +30,12 @@ body{
       color: $white;
     }
 
+    .backGround{
+      background-color: $background;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
     *{
       box-sizing: border-box;
     }

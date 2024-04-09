@@ -21,8 +21,10 @@ function SimpleBarChart(props) {
 
     return (
         cleanData && (
-            <ResponsiveContainer width="95%" height={200}>
-                <BarChart data={cleanData}>
+            <ResponsiveContainer width="95%" height="95%">
+                <BarChart data={cleanData}
+                          margin={{ top: 7, right: 5, left: 5, bottom: 5  }}
+                >
                     <XAxis dataKey="id"/>
                     <YAxis tick={{fill: '#020203'}}
                            tickLine={{stroke: '#020203'}}

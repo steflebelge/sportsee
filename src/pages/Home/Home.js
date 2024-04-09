@@ -78,13 +78,12 @@ function Home() {
                 && USER_AVERAGE_SESSIONS
                 && USER_PERFORMANCE) ? (
                 <>
-                    {console.log('render donnees')}
                     {/*Si toutes les données ont été correctement chargées on affiche le dashboard*/}
                     <span id="top">Bonjour <span>{USER_MAIN_DATA.userInfos.firstName}</span>
                         <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p></span>
                     <span id="bottom">
                     <span id="gauche">
-                        <span id="un" className="ligne">
+                        <span id="un" className="ligne backGround">
                             <p>
                                 Activité quotidienne <br></br>
                                 <span>Calories brûlées (kCal)</span>
@@ -105,7 +104,7 @@ function Home() {
                                         data={USER_PERFORMANCE}
                                     />
                             </span>
-                            <span className="graphe">
+                            <span className="graphe backGround">
                                 <SimplePieChart
                                     data={USER_MAIN_DATA}
                                 />
@@ -134,10 +133,7 @@ function Home() {
 export default Home;
 
 
- // - overflow diag rouge
- // - label radar tronqués
-//  - echaelle bar tronquée
-// - phrase accueil
+ // - survol diag rouge => background != couleur
 // - test responsive
-// - test switch fetch/fakeFetch
+// - verif avancée Notion et mise en situation
 

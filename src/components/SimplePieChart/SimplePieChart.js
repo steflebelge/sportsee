@@ -5,7 +5,7 @@ import "./SimplePieChart.scss";
 function SimplePieChart(props) {
     const [data, setData] = useState(props.data);
     const [cleanData, setCleanData] = useState(null);
-    const COLORS = ['#E60000', '#fff'];
+    const COLORS = ['#E60000', '#fff0'];
 
     useEffect(() => {
         let dataTmp = [];
@@ -32,7 +32,7 @@ function SimplePieChart(props) {
                             cornerRadius={10}
                         >
                             {cleanData.map((entry, index) => (
-                                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]}/>
+                                <Cell key={`cell-${index}`} stroke={"none"} fill={COLORS[index % COLORS.length]}/>
                             ))}
                         </Pie>
                         <Legend

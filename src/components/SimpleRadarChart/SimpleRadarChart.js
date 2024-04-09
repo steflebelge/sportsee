@@ -28,7 +28,9 @@ function SimpleRadarChart(props) {
         cleanData && (
             <div id="SimpleRadarChart">
                 <ResponsiveContainer>
-                    <RadarChart data={cleanData}>
+                    <RadarChart data={cleanData}
+                                margin={{ top: 7, right: 50, left: 50, bottom: 5  }}
+                    >
                         <PolarGrid
                             radialLines={false}
                             stroke={"#fff"}/>

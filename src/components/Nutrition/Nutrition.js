@@ -35,7 +35,7 @@ function Nutrition(props) {
 
     return (
         nutritionName && (
-            <div id="nutritionInfos">
+            <div id="nutritionInfos" className="backGround">
                 <span className="icone" style={{backgroundColor: `${couleur}`}}>
                     <img src={`/img/${nutritionName}.svg`} alt=""/>
                 </span>

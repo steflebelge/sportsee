@@ -33,10 +33,12 @@ div#home {
       span.ligne {
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 10px;
+        justify-content: space-between;
         flex: 1;
 
         &#un{
+
           & > p {
             font-size:15px;
             margin: 0;
