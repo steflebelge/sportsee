@@ -8,7 +8,7 @@ import SimpleRadarChart from "../../components/SimpleRadarChart/SimpleRadarChart
 import "./Home.scss";
 
 function Home() {
-    const [userId, setUserId] = useState(12);
+    const [userId, setUserId] = useState(18);
     const [USER_MAIN_DATA, setUSER_MAIN_DATA] = useState(null);
     const [USER_ACTIVITY, setUSER_ACTIVITY] = useState(null);
     const [USER_AVERAGE_SESSIONS, setUSER_AVERAGE_SESSIONS] = useState(null);
@@ -22,7 +22,7 @@ function Home() {
         "USER_MAIN_DATA",
     ];
 
-    //récuperation des données utilisateur au chargmenet de la page
+    //récuperation des données utilisateur au chargmenent de la page
     useEffect(() => {
         allDatas.forEach(function (datatTmp) {
             // console.log('appel fetchData ' + datatTmp);
@@ -133,7 +133,14 @@ function Home() {
 export default Home;
 
 
- // - survol diag rouge => background != couleur
-// - verif avancée Notion (++routes) et mise en situation
+// - verif avancée Notion
+//      : #11 : L’axe des abscisses correspond aux jours du mois courant.
+//      : #12 : L’axe des abscisses correspond à la durée moyenne des sessions. != maquettes
+//      : #5 et #8 : meme route, différentes infos attendues
+//      : #6 et #10 : : meme route, différentes infos attendues
+
+// - verif mise en situation
+//      : documentes ton projet ( Readme, de la JSDoc)
+
 // - preparation Soutenance
 

@@ -67,11 +67,14 @@ async function fetchData(userId, typeDonnee){
     }
 
     // return fetch(urlApi + userId  + endOfUrl)
-    await sleep(250);
     return fakeFetch(userId, typeDonnee)
         .then(retourPromesseFetch => {
             return retourPromesseFetch.json()
                 .then(retourPromesseJson => {
+                    if(typeDonnee === "USER_MAIN_DATA" && !retourPromesseJson.data.todayScore)
+                        retourPromesseJson.data.todayScore = retourPromesseJson.data.score;
+
+
                     if(retourPromesseJson.data)
                         return retourPromesseJson.data;
                     return retourPromesseJson;
@@ -83,10 +86,6 @@ async function fetchData(userId, typeDonnee){
         .catch(err => {
             throw err;
         });
-}
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 export {fetchData};

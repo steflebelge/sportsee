@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {LineChart, Line, Legend, XAxis, ResponsiveContainer, Tooltip} from 'recharts';
+import {LineChart, Line, Legend, XAxis, ResponsiveContainer, Tooltip, Rectangle} from 'recharts';
 import "./SimpleLineChart.scss";
 
 function SimpleLineChart(props) {
@@ -20,6 +20,21 @@ function SimpleLineChart(props) {
         return [value + " min"];
     }
 
+    function CustomCursor(props) {
+        const { points, width, height } = props
+        const { x, y } = points[0];
+        return (
+            <Rectangle
+                fill="#000000"
+                fillOpacity="10%"
+                x={x}
+                y={y - 60}
+                width={width + 100}
+                height={height + 100}
+                style={{ transition: 'all ease-out 0.3s' }}
+            />
+        )
+    }
     return (
         cleanData && (
             <ResponsiveContainer id="lineChart" width="100%" height="100%">
@@ -44,8 +59,8 @@ function SimpleLineChart(props) {
                         axisLine={false}
                     />
                     <Line
-                        type="basis"
                         dataKey="sessionLength"
+                        type="bump"
                         stroke="url(#linear)"
                         dot={false}
                         activeDot={{stroke: "#FFFFFF88", fill: "#fff", strokeWidth: 10, r: 5}}
@@ -62,7 +77,7 @@ function SimpleLineChart(props) {
                         formatter={
                             (value, name) => toolTipFormater(value, name)
                         }
-                        cursor={false}
+                        cursor={<CustomCursor />}
                         itemStyle={{backgroundColor: "#fff", color: "#020203"}}
                     />
                 </LineChart>
