@@ -139,8 +139,5 @@ export default Home;
 //      : #5 et #8 : meme route, différentes infos attendues
 //      : #6 et #10 : : meme route, différentes infos attendues
 
-// - verif mise en situation
-//      : documentes ton projet ( Readme, de la JSDoc)
-
 // - preparation Soutenance
 
