@@ -11,26 +11,41 @@ import {
 import "./SimpleRadarChart.scss";
 
 function SimpleRadarChart(props) {
-    const [data, setData] = useState(props.data.data);
-    const [kind, setkind] = useState(props.data.kind);
+    const [data, setData] = useState(null);
+    const [kind, setkind] = useState(null);
     const [cleanData, setCleanData] = useState(null);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
-        data.forEach(function (dataTmp) {
-            if (kind[dataTmp.kind])
-                dataTmp.kind = kind[dataTmp.kind];
+        if (cleanData)
+            return;
+
+        if (!props || !props.data || !props.data.data) {
+            setError("No data");
+            return;
+        }
+
+        setError(null);
+        props.data.data.forEach(function (dataTmp) {
+            if (props.data.kind[dataTmp.kind])
+                dataTmp.kind = props.data.kind[dataTmp.kind];
         });
 
-        setCleanData(data);
-    }, []);
+        console.log("SimpleRadarChart set data");
+        setCleanData(props.data);
+    }, [props]);
 
     return (
-        cleanData && (
-            <div id="SimpleRadarChart">
+        <>
+            {error ? (
+                <p style={{margin: "auto"}}>{error}</p>
+            ) : (
+                cleanData && (
+                <div id="SimpleRadarChart">
                 <ResponsiveContainer>
                     <RadarChart
-                        data={cleanData}
-                        margin={{ top: 7, right: 50, left: 50, bottom: 5  }}
+                        data={cleanData.data}
+                        margin={{top: 7, right: 50, left: 50, bottom: 5}}
                     >
                         <PolarGrid
                             radialLines={false}
@@ -51,7 +66,8 @@ function SimpleRadarChart(props) {
                     </RadarChart>
                 </ResponsiveContainer>
             </div>
-        )
+            ))}
+        </>
     );
 }
 

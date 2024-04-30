@@ -66,25 +66,19 @@ async function fetchData(userId, typeDonnee){
             break;
     }
 
-    // return fetch(urlApi + userId  + endOfUrl)
-    return fakeFetch(userId, typeDonnee)
+    return fetch(urlApi + userId  + endOfUrl)
+    // return fakeFetch(userId, typeDonnee)
         .then(retourPromesseFetch => {
             return retourPromesseFetch.json()
                 .then(retourPromesseJson => {
-                    if(typeDonnee === "USER_MAIN_DATA" && !retourPromesseJson.data.todayScore)
-                        retourPromesseJson.data.todayScore = retourPromesseJson.data.score;
-
-
-                    if(retourPromesseJson.data)
-                        return retourPromesseJson.data;
                     return retourPromesseJson;
                 })
                 .catch(err => {
-                    throw err;
+                    return false;
                 })
         })
         .catch(err => {
-            throw err;
+            return false;
         });
 }
 
